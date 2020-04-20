@@ -8,7 +8,7 @@ const router = express.Router();
 router.get('/', (req, res) => {
     // return json format
 
-    res.cookie('username', 'tainbo');
+    res.cookie('username', 'tainbo'); // write cookie
     res.json(members)
 });
 
