@@ -2,6 +2,7 @@ import logger from "./middleware/logger"
 const experss = require('express');
 const path =require('path');
 import membersApi from './routes/api/members'
+require('dotenv/config')
 
 const app = experss();
 
@@ -46,5 +47,6 @@ app.use(experss.urlencoded({extended: false})); // handle url encoded data
 // api members route
 app.use('/api/members', membersApi);
 
+console.log(process.env.TOKEN); // process.env is NODE_MODULE object
 app.listen(PORT, ()=>{console.log(`server started on ${PORT}`)});
 
