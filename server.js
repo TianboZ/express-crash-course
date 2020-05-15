@@ -6,8 +6,14 @@ require('dotenv/config')
 
 const app = experss();
 
+
+const {NODE_ENV, PORT, HOST, TOKEN } = process.env;  //// process.env is NODE_MODULE object
+console.log(
+    NODE_ENV, PORT, HOST, TOKEN
+);
+
 // check env variable first
-const PORT = process.env.PORT || 5000;
+//const PORT = process.env.PORT || 5000;
 
 // middleware
 
@@ -47,6 +53,5 @@ app.use(experss.urlencoded({extended: false})); // handle url encoded data
 // api members route
 app.use('/api/members', membersApi);
 
-console.log(process.env.TOKEN); // process.env is NODE_MODULE object
 app.listen(PORT, ()=>{console.log(`server started on ${PORT}`)});
 
